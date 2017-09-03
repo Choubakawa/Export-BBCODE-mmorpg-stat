@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Export BBCODE mmorpg-stat
 // @namespace    https://www.mmorpg-stat.eu/comparaison.php?*
-// @version      1.0
+// @version      1.0.1
 // @description  Generate an export in BBOCDE from the table of comparison for forum.
 // @author       Choubakawa (Ogame.fr uni Fornax)
 // @match        https://www.mmorpg-stat.eu/comparaison.php?*
@@ -34,7 +34,10 @@ titlePourcentage = titlePourcentage.substr(0,1).toUpperCase()+titlePourcentage.s
 let titleProgPointPerDay = $.trim( $(thead[0].rows[0].cells[9]).text() );
 titleProgPointPerDay = titleProgPointPerDay.substr(0,1).toUpperCase()+titleProgPointPerDay.substr(1);
 
-let cookie = JSON.parse(getValueInCookie( "checkedCols"));
+let cookie = getValueInCookie( "checkedCols");
+if( cookie.length !== 0 ) {
+    cookie = JSON.parse( cookie );
+}
 
 //add checkboxes to table
 var checkboxes = $('<tr></tr>');
@@ -189,7 +192,7 @@ function saveInCookie() {
     };
     var d = new Date();
     d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
-    var expires = "max-age="+d.toUTCString();
+    var expires = "expires="+d.toUTCString();
 
     document.cookie = "checkedCols=" + JSON.stringify(value) + ";" + expires + ";path=/";
 }
