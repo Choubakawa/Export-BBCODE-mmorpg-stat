@@ -8,6 +8,7 @@
 // @supportURL   https://github.com/Choubakawa/Export-BBCODE-mmorpg-stat/issues
 // @updateURL    https://openuserjs.org/meta/Choubakawa/Export_BBCODE_mmorpg-stat.meta.js
 // @downloadURL  https://openuserjs.org/install/Choubakawa/Export_BBCODE_mmorpg-stat.user.js
+// @license MIT
 // ==/UserScript==
 var title = $.trim( $( document.getElementsByTagName('table')[11].getElementsByTagName('tbody')[0] ).text() );
 var thead = $('#myTable > thead');
