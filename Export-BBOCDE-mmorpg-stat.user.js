@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Export BBCODE mmorpg-stat
 // @namespace    https://www.mmorpg-stat.eu/comparaison.php?*
-// @version      1.0.1
+// @version      1.0.2
 // @description  Generate an export in BBOCDE from the table of comparison for forum.
 // @author       Choubakawa (Ogame.fr uni Fornax)
 // @match        https://www.mmorpg-stat.eu/comparaison.php?*
@@ -10,7 +10,7 @@
 // @downloadURL  https://openuserjs.org/install/Choubakawa/Export_BBCODE_mmorpg-stat.user.js
 // @license MIT
 // ==/UserScript==
-var title = $.trim( $( document.getElementsByTagName('table')[11].getElementsByTagName('tbody')[0] ).text() );
+var title = $.trim( $( document.getElementsByTagName('table')[12].getElementsByTagName('tbody')[0] ).text() );
 var thead = $('#myTable > thead');
 var colTheadLength = thead[0].rows[0].cells.length;
 var tbody = $('#myTable > tbody');
@@ -29,7 +29,7 @@ let titleProgPointsOfDay = "+/-";
 let titlePeriode = $.trim( $(thead[0].rows[0].cells[6]).text() );
 titlePeriode = titlePeriode.substr(0,1).toUpperCase()+titlePeriode.substr(1);
 let titleProgPoint = $.trim( $(thead[0].rows[0].cells[7]).text() );
-titlePtitleProgPointeriode = titleProgPoint.substr(0,1).toUpperCase()+titleProgPoint.substr(1);
+titleProgPoint = titleProgPoint.substr(0,1).toUpperCase()+titleProgPoint.substr(1);
 let titlePourcentage = $.trim( $(thead[0].rows[0].cells[8]).text() );
 titlePourcentage = titlePourcentage.substr(0,1).toUpperCase()+titlePourcentage.substr(1);
 let titleProgPointPerDay = $.trim( $(thead[0].rows[0].cells[9]).text() );
